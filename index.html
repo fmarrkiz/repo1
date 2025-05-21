@@ -3,64 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="stylesheet" href="sass/main.css">
     <title>Carousel</title>
    
 </head>
 <body>
-<section class="container">
+<div class="Carousel">
 
-  <button type="button">Suivante</button>
+  <button type="button" class="previous"> &#10094</button>
+  <button type="button" class="next">&#10095</button>
 
-    <article class="carousel_container">
-
-    <article class="item">
-            <figure class="item__image" id="carousel1">        
-            <img
-        src="/Users/mariekf/Desktop/simplon/front-dev/brief1/repo1/img_snakes/snake1.png" 
-        alt="Ourobouros in movement" 
-        width="200" 
-        height="200"/>
-        <figcaption> Ourobouros going once </figcaption>
-            </figure> 
-    </article>
-
-    <article class="item">
-            <figure class="item__image" id="carousel2">
+    <div class="CarouselContainer" >
+        <div class="CarouselSlide" id="slide1">         
         <img
-        src="/Users/mariekf/Desktop/simplon/front-dev/brief1/repo1/img_snakes/snake2.png" 
-        alt="Ourobouros in movement" 
-        width="200" 
-        height="200"/>
-        <figcaption>Ourobouros going twice</figcaption>
-            </figure>
-    </article>   
-    
-    <article class="item">   
-            <figure class="item__image" id="carousel3">
-        <img
-        src="/Users/mariekf/Desktop/simplon/front-dev/brief1/repo1/img_snakes/snake3.png" 
-        alt="Ourobouros in movement" 
-        width="200" 
-        height="200"/>
-        <figcaption>Ourobouros almost gone</figcaption>
-            </figure>
-    </article>
+        src="./img/space1.jpg" 
+        alt="Space" 
+        height="300"
+        width="500"/>
+        </div> 
 
-    <article class="item">
-            <figure class="item__image" id="carousel4">
+        <div class="CarouselSlide" id="slide2">
         <img
-        src="/Users/mariekf/Desktop/simplon/front-dev/brief1/repo1/img_snakes/snake4.png" 
-        alt="Ourobouros in movement" 
-        width="200" 
-        height="200"/>
-        <figcaption>Ourobouros now gone</figcaption>  
-            </figure> 
-    </article>
-</section>
-    
+        src="./img/space2.jpg" 
+        alt="Space"
+        height="300"
+        width="500" />
+        </div>
 
+       <div class="CarouselSlide" id="slide3">
+        <img
+        src="./img/space3.jpg" 
+        alt="Space" 
+        height="300"
+        width="500"/>
+        </div>
+
+        <div class="CarouselSlide" id="slide4">
+        <img
+        src="./img/space2.jpg" 
+        alt="Space" 
+        height="300"
+        width="500"/>
+        </div>
+    </div>
+</div>
      <script src="js/main.js"> 
      </script>
 </body>
 </html>
-

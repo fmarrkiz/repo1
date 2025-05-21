@@ -1,42 +1,40 @@
 "use strict";
 
-class Carousel {
-    constructor(element, options = {}){
+let carouselContainer = document.querySelector(".Carousel");
+let carouselSlider = carouselContainer.querySelector(".CarouselContainer");
+let slides = carouselContainer.querySelectorAll(".CarouselSlide");
+let previousButton = document.querySelector(".previous");
+let nextButton = document.querySelector(".next");
 
-this.element = element;
+let slideIndex = 0;
+let totalSlides = slides.length;
+let rotationDirection = 1;
 
-this.options = Object.assign({}, {
-    slidesToScroll: 1,
-    slidesVisible: 1,
-}, options);
+document.addEventListener('DOMContentLoaded', updateCarouselPosition);
 
-this.children = [].slice.call(element.children);
+  
+function goToNextSlide() {
+  rotationDirection = 1;
+    slideIndex = (slideIndex + 1) % totalSlides;
+    updateCarouselPosition();
+  }
+  
+function goToPrevSlide() {
+  rotationDirection = -1;
+    slideIndex = (slideIndex - 1) % totalSlides;
+    updateCarouselPosition();
+  }
 
-let root = this.createArticleWithClass('carousel');
-let container = this.createArticleWithClass('carousel__container');
-root.appendChild(container);
-this.element.appendChild(root);
-this.children.forEach((child) => {
-   let item = this.createArticleWithClass('carousel__item')
-   item.appendChild(child);
-    container.appendChild(child)
-});
-
-
-}
-}
-
-function createArticleWithClass(className) { //check that it's article and not section
-let article = document.createElement('article');
-article.setAttribute('class', className);
-return article;
-}
-
-//document.addEventListener('DOMContentLoaded',function(){
  
-new Carousel(document.querySelector('#carousel1'), {
-    slidesToScroll: 1,
-    slidesVisible: 1,
-})
+  previousButton.addEventListener('click', () => {
+    goToPrevSlide()});
+ 
 
-//})
+
+nextButton.addEventListener('click', () => {
+    goToNextSlide()});
+
+  function updateCarouselPosition() {
+    const translateValue = -slideIndex * 100;
+    carouselSlider.style.transform = `translateX(${translateValue}%)`;
+  }

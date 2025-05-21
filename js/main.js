@@ -46,15 +46,15 @@ setTimeout(() => {
   updateCarouselPosition();
 }
 }
-  
+
 function goToPrevSlide() {
     slideIndex--;
 
 
-    if (slideIndex < 0) {
+    if (slideIndex <= 0) {
       slideIndex = totalSlides / 2 - 1;
     
-      carouselSlider.style.transition = "none";
+      carouselSlider.style.transition = "transform 0s ease-in-out";
     updateCarouselPosition();
 
     setTimeout(() => {

@@ -8,31 +8,70 @@ let nextButton = document.querySelector(".next");
 
 let slideIndex = 0;
 let totalSlides = slides.length;
-let rotationDirection = 1;
 
-document.addEventListener('DOMContentLoaded', updateCarouselPosition);
 
-  
+document.addEventListener('DOMContentLoaded', () => {
+
+  setUpContinuousRotation();
+  updateCarouselPosition();
+});
+
+function setUpContinuousRotation() {
+  slides.forEach(slide =>{ 
+    const clone = slide.cloneNode(true);
+    carouselSlider.appendChild(clone);
+  });
+
+  slides = carouselContainer.querySelectorAll(".CarouselSlide");
+  totalSlides = slides.length;
+}
+
 function goToNextSlide() {
-  rotationDirection = 1;
-    slideIndex = (slideIndex + 1) % totalSlides;
+ slideIndex++;
+
+ if (slideIndex >= totalSlides / 2) {
+updateCarouselPosition();
+
+setTimeout(() => {
+    slideIndex = slideIndex % (totalSlides / 2);
+    carouselSlider.style.transition = "none";
     updateCarouselPosition();
-  }
+
+setTimeout(() => {
+      carouselSlider.style.transition = "transform 0.5s ease-in-out";
+    }, 50);
+  }, 500);
+   
+} else {
+  updateCarouselPosition();
+}
+}
   
 function goToPrevSlide() {
-  rotationDirection = -1;
-    slideIndex = (slideIndex - 1) % totalSlides;
+    slideIndex--;
+
+
+    if (slideIndex < 0) {
+      slideIndex = totalSlides / 2 - 1;
+    
+      carouselSlider.style.transition = "none";
     updateCarouselPosition();
+
+    setTimeout(() => {
+        carouselSlider.style.transition = "transform 0.5s ease";
+      }, 50);
+    } else {
+      updateCarouselPosition();
+    }
   }
 
- 
   previousButton.addEventListener('click', () => {
-    goToPrevSlide()});
- 
-
+    goToPrevSlide();
+  });
 
 nextButton.addEventListener('click', () => {
-    goToNextSlide()});
+    goToNextSlide();
+  });
 
   function updateCarouselPosition() {
     const translateValue = -slideIndex * 100;

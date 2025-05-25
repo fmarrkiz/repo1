@@ -28,13 +28,11 @@ function setUpContinuousRotation() {
 
 function goToNextSlide() {
  slideIndex++;
-
- if (slideIndex > totalSlides / 2) {
-updateCarouselPosition();
-
+ updateCarouselPosition();
+ if (slideIndex >= totalSlides / 2) {
 setTimeout(() => {
-    slideIndex = slideIndex % (totalSlides / 2);
-    carouselSlider.style.transition = "transform 0s ease-in-out";
+    carouselSlider.style.transition = "none";
+    slideIndex = 0;
     updateCarouselPosition();
 
 setTimeout(() => {
@@ -49,16 +47,16 @@ setTimeout(() => {
 
 function goToPrevSlide() {
     slideIndex--;
-
-
-    if (slideIndex < 0) {
-      slideIndex = totalSlides / 2 - 1;
     
-      carouselSlider.style.transition = "transform 0s ease-in-out";
+    if (slideIndex < 0) {
+      carouselSlider.style.transition = "none";
+      slideIndex = (totalSlides / 2) - 1;
     updateCarouselPosition();
 
     setTimeout(() => {
-        carouselSlider.style.transition = "transform 0.5s ease";
+      
+        carouselSlider.style.transition = "transform 0.5s ease-in-out";
+        goToPrevSlide();
       }, 50);
     } else {
       updateCarouselPosition();

@@ -1,13 +1,39 @@
+body {
+  margin: 0;
+  padding: 60px;
+  background: linear-gradient(195deg, 
+    rgba(105, 27, 154, 0.78) 0%,
+     #4a148c 25%,
+      #2d1b69 50%,
+       #1a1a5e 75%, 
+       #0c0c32 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
 .Carousel {
-  width: 500px;
+  width: 800px;
+  height: 400px;
   overflow: hidden;
   position: relative;
+  margin: 0 auto;
+  border-radius: 15px;
+  box-shadow: 
+    0 0 30px rgba(106, 27, 154, 0.5),
+    0 0 60px rgba(74, 20, 140, 0.3),
+    inset 0 0 20px rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+
 }
 
 .CarouselContainer {
   display: flex;
   transition: transform 0.5s ease-in-out;
   width: 100%;
+
 }
 
 .CarouselSlide {

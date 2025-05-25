@@ -1,44 +1,28 @@
+.button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 2rem;
+    height: 2rem;
+    font-size: 32px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.28);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
 
-.previous,
-.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  @include button-base;
-  
-  // Basic button styles
-  background-color: $primary-color;
-  color: $white;
-  padding: $spacing-sm $spacing-md;
-  font-size: $font-size-large;
-  z-index: 10;
-  
-  // Add your button styles here
-  // Example: gradients, shadows, hover effects, etc.
-  
-  &:hover {
-    // Add hover effects here
-    background-color: $secondary-color;
-  }
-  
-  @include mobile {
-    padding: $spacing-sm;
-    font-size: $font-size-base;
-  }
+    &:hover {
+        font-size: 40px;
+    }
 }
-
 .previous {
-  left: $spacing-md;
-  
-  @include mobile {
-    left: $spacing-sm;
-  }
+    left: 0px;
 }
-
 .next {
-  right: $spacing-md;
-  
-  @include mobile {
-    right: $spacing-sm;
-  }
+    right: 0px;
 }

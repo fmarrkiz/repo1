@@ -1,0 +1,17 @@
+// ==========================================================================
+// HEADER
+// ==========================================================================
+
+header {
+    padding: $spacing-xl 0;
+    text-align: center;
+    
+    h1 {
+      // Add your custom styles here
+      // Example: color, text effects, animations, etc.
+    }
+    
+    @include mobile {
+      padding: $spacing-lg 0;
+    }
+  }

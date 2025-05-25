@@ -1,45 +1,44 @@
-.previous, .next {
+
+.previous,
+.next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 1;
+  @include button-base;
+  
+  // Basic button styles
+  background-color: $primary-color;
+  color: $white;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-large;
+  z-index: 10;
+  
+  // Add your button styles here
+  // Example: gradients, shadows, hover effects, etc.
+  
+  &:hover {
+    // Add hover effects here
+    background-color: $secondary-color;
+  }
+  
+  @include mobile {
+    padding: $spacing-sm;
+    font-size: $font-size-base;
+  }
 }
 
 .previous {
-  left: 0px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 1;
-  width: 40px;
-  height: 40px;
-  background-color: transparent;
-  border: none;
-  border-radius: 50%;
-  color: whitesmoke;
-  cursor: pointer;
-  display: flex;
-  align-items: left;
-  justify-content: center;
-  transition: background-color 0.3s ease;
-  transform: scale(2.0);
+  left: $spacing-md;
+  
+  @include mobile {
+    left: $spacing-sm;
+  }
 }
 
 .next {
-    right: 0px;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1;
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
-    border: none;
-    border-radius: 50%;
-    color: whitesmoke;
-    cursor: pointer;
-    display: flex;
-    align-items: right;
-    justify-content: center;
-    transition: background-color 0.3s ease;
-    transform: scale(2.0);
+  right: $spacing-md;
+  
+  @include mobile {
+    right: $spacing-sm;
   }
-
+}

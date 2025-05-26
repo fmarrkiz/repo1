@@ -4,8 +4,6 @@
 
 ### *Space-Themed Image Carousel*
 
-*A beautiful and immersive web carousel featuring stunning space imagery. The page contains:*
-
 * Real space images including the Milky Way, Carina Nebula, Phantom Galaxy.
 
 * Previous and next navigation buttons with elegant arrow symbols (◀ ▶)
